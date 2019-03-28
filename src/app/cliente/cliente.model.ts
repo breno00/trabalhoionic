@@ -6,24 +6,24 @@ export class Cliente {
   ativo: boolean;
 
   validar(confpws: string) {
-    let erros: string = "";
+    let erros: string = null;
 
-    if (this.nome == "") {
+    if (this.nome == null) {
       erros += "Nome em branco. <br>";
     }
-    if (this.email == "") {
+    if (this.email == null) {
       erros += "E-mail em branco. <br>";
     }
-    if (this.pws == "") {
+    if (this.pws == null) {
       erros += "Senha em branco. <br>";
+    } else if (this.pws.length < 5) {
+      erros += "Senha Curta. <br>";
     } else if (this.pws != confpws) {
       erros += "Senhas diferentes. <br>";
     }
+
     if (erros != "") throw erros;
 
     return true;
-  }
-  AlertExample(AlertExample) {
-      
   }
 }
