@@ -49,7 +49,9 @@
       ></ion-input>
     </ion-item>
 
-    <span ngIf="pws.value != conf.value">Senhas diferentes</span>
+    <ion-note color="danger">
+      <p *ngIf="pws.value != conf.value">Senhas diferentes</p>
+    </ion-note> 
 
     <ion-button type="submit" [disabled]="!fc.valid">Salvar </ion-button>
     <ion-button type="reset">Limpar </ion-button>

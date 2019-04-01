@@ -6,7 +6,7 @@ export class Cliente {
   ativo: boolean;
 
   validar(confpws: string) {
-    let erros: string = null;
+    let erros: string = "";
 
     if (this.nome == null) {
       erros += "Nome em branco. <br>";
