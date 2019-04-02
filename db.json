@@ -40,6 +40,13 @@
       "email": "c@as.com",
       "pws": "asdasd",
       "id": 6
+    },
+    {
+      "ativo": true,
+      "nome": "Paulo",
+      "email": "Paulineraro@paulo.com",
+      "pws": "asdasd",
+      "id": 7
     }
   ]
 }

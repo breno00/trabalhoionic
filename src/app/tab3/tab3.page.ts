@@ -22,21 +22,23 @@ export class Tab3Page {
     this.clientes$ = this.clienteService.getClientes();
   }
 
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
-  
   remover(cliente: Cliente) {
     //this.clienteService.deleteCliente(cliente);
+    
   }
 
   atualizar(cliente: Cliente) {
     //this.clienteService.atualizar(cliente);
     this.router.navigate(['tabs/tab2']);
+  }
+
+  doRefresh(event) {
+    //console.log('Begin async operation');
+    this.clientes$ = this.clienteService.getClientes();
+
+    setTimeout(() => {
+      //sconsole.log('Async operation has ended');
+      event.target.complete();
+    }, 3000);
   }
 }

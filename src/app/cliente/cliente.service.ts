@@ -17,7 +17,7 @@ export class ClienteService {
     this.clientes = [];
   }
 
-  addCliente(cliente: Cliente):Observable<Cliente> {
+  addCliente(cliente: Cliente): Observable<Cliente> {
     //this.clientes.push(cliente);
     return this.http.post<Cliente>(this.urlCliente, cliente);
   }
@@ -27,9 +27,10 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.urlCliente);
   }
 
-  deleteCliente(cliente: Cliente): void {
+  deleteCliente(cliente: Cliente) {
     //let p = this.clientes.indexOf(cliente);
     //this.clientes.splice(p, 1);
+    return this.http.delete(this.urlCliente + "/" + cliente.id);
   }
 
   validar(cliente: Cliente, confpws: string) {
