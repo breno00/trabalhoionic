@@ -1,26 +1,45 @@
 {
   "clientes": [
     {
-      "_id": 1,
+      "id": 1,
       "nome": "Ana Maria",
       "email": "ana@email.com",
       "pws": "111111",
       "ativo": true
     },
     {
-      "_id": 2,
+      "id": 2,
       "nome": "Pedro Cardoso",
       "email": "pc@email.com",
       "pws": "222222",
       "ativo": true
     },
     {
-      "_id": 3,
+      "id": 3,
       "nome": "Rafael Jooj",
       "email": "rf@email.com",
       "pws": "333333",
       "ativo": true
+    },
+    {
+      "nome": "Breno",
+      "email": "brmramos20@gmail.com",
+      "pws": "asdasd",
+      "id": 4
+    },
+    {
+      "ativo": true,
+      "nome": "Lucas",
+      "email": "lucas@hotmail.com",
+      "pws": "asdasd",
+      "id": 5
+    },
+    {
+      "ativo": true,
+      "nome": "cassio",
+      "email": "c@as.com",
+      "pws": "asdasd",
+      "id": 6
     }
   ]
 }
-  

@@ -10,37 +10,36 @@ import { ClienteService } from "../cliente/cliente.service";
 })
 export class Tab2Page {
   cliente: Cliente;
-  clientes: Cliente[] = [];
   confPws: string;
 
   constructor(
     public alertController: AlertController,
     private clienteService: ClienteService
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.cliente = new Cliente();
   }
-
   formDados(form) {
-    console.log(form);
     if (form.valid) {
       this.addCliente(this.cliente) ? form.reset() : "";
     }
   }
 
   addCliente(cliente: Cliente): boolean {
-    try {
-      this.cliente.validar(this.confPws);
-
-      //this.clientes.push(cliente);
-      this.clienteService.addCliente(cliente);
-      this.cliente = new Cliente();
-      this.confPws = "";
-
-      this.presentAlert("AVISO", "Cadastrado", "success");
-      return true;
-    } catch (erros) {
-      this.presentAlert("ERRO!", erros, "danger");
-    }
+    this.clienteService.addCliente(cliente)
+    .subscribe(
+      ok => {
+        this.presentAlert("AVISO", "Cadastrado", "success");
+        this.cliente = new Cliente();
+        this.confPws = "";
+      },
+      erro => {
+        this.presentAlert("ERRO!", "", "danger");
+        return false;
+      }
+    );
+    return true;
   }
 
   async presentAlert(tipo: string, texto: string, cor: string) {
