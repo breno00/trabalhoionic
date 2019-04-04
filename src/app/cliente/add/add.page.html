@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro de Clientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #fc="ngForm" (ngSubmit)="formDados(fc)">
+    <!-- Inputs with labels -->
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="cliente.nome" name="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input
+        [(ngModel)]="cliente.email"
+        name="email"
+        type="email"
+        required
+        email
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input
+        [(ngModel)]="cliente.pws"
+        type="password"
+        name="pws"
+        required
+        minlength="6"
+        #pws="ngModel"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar Senha</ion-label>
+      <ion-input
+        [(ngModel)]="confPws"
+        type="password"
+        name="confPws"
+        required
+        minlength="6"
+        #conf="ngModel"
+      ></ion-input>
+    </ion-item>
+
+    <ion-note color="danger">
+      <p *ngIf="pws.value != conf.value">Senhas diferentes</p>
+    </ion-note> 
+
+    <ion-row padding-top>
+    <ion-button type="submit" [disabled]="!fc.valid">Salvar </ion-button>
+    <ion-button type="reset">Limpar </ion-button>
+  </ion-row>
+  </form>
+</ion-content>

@@ -27,10 +27,18 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.urlCliente);
   }
 
+  getCliente(id: number) {
+    return this.http.get<Cliente>(this.urlCliente + "/" + id);
+  }
+
+  updateCliente(cliente: Cliente, id: number){
+    return this.http.put<Cliente>(this.urlCliente + "/" + id, cliente);
+  }
+
   deleteCliente(cliente: Cliente) {
     //let p = this.clientes.indexOf(cliente);
     //this.clientes.splice(p, 1);
-    return this.http.delete(this.urlCliente + "/" + cliente.id);
+    return this.http.delete<Cliente>(this.urlCliente + "/" + cliente.id);
   }
 
   validar(cliente: Cliente, confpws: string) {

@@ -1,17 +1,19 @@
-import { Cliente } from "./../cliente/cliente.model";
-import { Component } from "@angular/core";
-import { AlertController } from "@ionic/angular";
-import { ClienteService } from "../cliente/cliente.service";
+import { Component, OnInit } from "@angular/core";
+import { ClienteService } from "../cliente.service";
+import { Cliente } from "../cliente.model";
+import { Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: "app-tab2",
-  templateUrl: "tab2.page.html",
-  styleUrls: ["tab2.page.scss"]
+  selector: "app-add",
+  templateUrl: "./add.page.html",
+  styleUrls: ["./add.page.scss"]
 })
-export class Tab2Page {
+export class AddPage implements OnInit {
   cliente: Cliente;
   confPws: string;
-
+  
   constructor(
     public alertController: AlertController,
     private clienteService: ClienteService
@@ -27,8 +29,7 @@ export class Tab2Page {
   }
 
   addCliente(cliente: Cliente): boolean {
-    this.clienteService.addCliente(cliente)
-    .subscribe(
+    this.clienteService.addCliente(cliente).subscribe(
       ok => {
         this.presentAlert("AVISO", "Cadastrado", "success");
         this.cliente = new Cliente();

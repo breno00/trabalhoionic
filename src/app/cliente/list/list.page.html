@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="clientes$ | async as clientes">
+<ion-content *ngIf="(clientes$ | async) as clientes" padding>
   <ion-item-sliding *ngFor="let c of clientes">
     <ion-item-options side="end">
       <ion-item-option color="danger" expandable (click)="remover(c)">
@@ -15,7 +15,9 @@
     </ion-item-options>
     <ion-item>
       <ion-avatar slot="start">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"/>
+        <img
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+        />
       </ion-avatar>
       <ion-label>
         {{ c.nome }}
@@ -38,7 +40,8 @@
       pullingIcon="arrow-down"
       pullingText=""
       refreshingSpinner="crescent"
-      refreshingText="">
+      refreshingText=""
+    >
     </ion-refresher-content>
   </ion-refresher>
 </ion-content>

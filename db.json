@@ -2,51 +2,17 @@
   "clientes": [
     {
       "id": 1,
-      "nome": "Ana Maria",
-      "email": "ana@email.com",
-      "pws": "111111",
+      "nome": "Ana",
+      "email": "ana@oi.com",
+      "pws": "123123",
       "ativo": true
     },
     {
       "id": 2,
-      "nome": "Pedro Cardoso",
-      "email": "pc@email.com",
-      "pws": "222222",
+      "nome": "Pedro Pedroso",
+      "email": "paunoc9@email.com",
+      "pws": "asdasd",
       "ativo": true
-    },
-    {
-      "id": 3,
-      "nome": "Rafael Jooj",
-      "email": "rf@email.com",
-      "pws": "333333",
-      "ativo": true
-    },
-    {
-      "nome": "Breno",
-      "email": "brmramos20@gmail.com",
-      "pws": "asdasd",
-      "id": 4
-    },
-    {
-      "ativo": true,
-      "nome": "Lucas",
-      "email": "lucas@hotmail.com",
-      "pws": "asdasd",
-      "id": 5
-    },
-    {
-      "ativo": true,
-      "nome": "cassio",
-      "email": "c@as.com",
-      "pws": "asdasd",
-      "id": 6
-    },
-    {
-      "ativo": true,
-      "nome": "Paulo",
-      "email": "Paulineraro@paulo.com",
-      "pws": "asdasd",
-      "id": 7
     }
   ]
 }
